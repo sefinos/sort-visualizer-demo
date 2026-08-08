@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer — Embeddable Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="page">
+
+        <header class="hero">
+            <p class="eyebrow">// embeddable widget</p>
+            <h1>Sorting, visualized<span class="cursor" aria-hidden="true">_</span></h1>
+            <p class="hero-sub">One script tag. Five algorithms. Full playback controls. No dependencies, no build step — this is the exact widget you'd drop into your course page.</p>
+        </header>
+
+        <section class="editor-window" id="editor-window" aria-label="Sorting visualizer demo">
+            <div class="titlebar">
+                <div class="traffic-lights" aria-hidden="true">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <span class="titlebar-label">sorting-visualizer — live demo</span>
+            </div>
+
+            <nav class="tab-bar" id="algorithm-tabs" role="tablist" aria-label="Choose algorithm">
+                <button class="tab active" data-algo="bubble" role="tab" aria-selected="true">bubbleSort.js</button>
+                <button class="tab" data-algo="insertion" role="tab" aria-selected="false">insertionSort.js</button>
+                <button class="tab" data-algo="selection" role="tab" aria-selected="false">selectionSort.js</button>
+                <button class="tab" data-algo="merge" role="tab" aria-selected="false">mergeSort.js</button>
+                <button class="tab" data-algo="quick" role="tab" aria-selected="false">quickSort.js</button>
+            </nav>
+
+            <div class="editor-body">
+                <div id="bar-container"></div>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-group">
+                    <label for="array-size">size <span id="size-label">20</span></label>
+                    <input type="range" id="array-size" min="5" max="100" value="20">
+                    <button id="generate-btn" class="btn btn-ghost">↻ new array</button>
+                </div>
+
+                <div class="toolbar-group playback-group">
+                    <button id="step-back-btn" class="btn btn-icon" title="Step back" aria-label="Step back">⏮</button>
+                    <button id="play-pause-btn" class="btn btn-primary" title="Play">▶ play</button>
+                    <button id="step-forward-btn" class="btn btn-icon" title="Step forward" aria-label="Step forward">⏭</button>
+                    <button id="reset-btn" class="btn btn-ghost" title="Reset to start">⟲ reset</button>
+                </div>
+
+                <div class="toolbar-group">
+                    <label for="speed-slider">delay <span id="speed-label">150ms</span></label>
+                    <input type="range" id="speed-slider" min="10" max="500" step="10" value="150">
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <span class="status-item" id="status-algo">bubbleSort.js</span>
+                <span class="status-item status-complexity" id="status-complexity">O(n²)</span>
+                <span class="status-spacer"></span>
+                <span class="status-item legend"><span class="dot-legend dot-compare"></span>compare</span>
+                <span class="status-item legend"><span class="dot-legend dot-swap"></span>swap</span>
+                <span class="status-item legend"><span class="dot-legend dot-sorted"></span>sorted</span>
+                <span class="status-spacer"></span>
+                <span class="status-item" id="status-compares">comparisons: 0</span>
+                <span class="status-item" id="status-ops">swaps: 0</span>
+            </div>
+        </section>
+
+        <footer class="cta">
+            <p class="cta-text">Buyers get this widget, unstyled and styled variants, and a README — ready to paste into any course page.</p>
+            <button class="btn btn-primary btn-large" id="buy-btn">Get it on Gumroad — £10</button>
+        </footer>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
