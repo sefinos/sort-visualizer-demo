@@ -3,6 +3,8 @@
 An interactive sorting-algorithm visualizer for course pages, blog posts, and lecture
 slides. One script tag, zero dependencies, zero build step.
 
+Live demo: https://sefinos.github.io/sort-visualizer-demo/
+
 ---
 
 ## Quick start
